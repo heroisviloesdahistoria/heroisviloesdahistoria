@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!-- ============ index.html (começa aqui) ============ -->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Heróis &amp; Vilões da História</title>
+  <meta name="description" content="Um acervo de figuras históricas de diferentes épocas e regiões do mundo.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <h1>Heróis &amp; Vilões da História</h1>
+    <p>Um acervo de pessoas que moldaram o mundo, de faraós a presidentes, de todos os continentes. Busque um nome ou explore por categoria.</p>
+  </header>
+
+  <main>
+    <section class="tools" aria-label="Busca e filtros">
+      <label class="search">
+        <span class="sr">Buscar por nome</span>
+        <input id="busca" type="search" placeholder="Buscar por nome…" autocomplete="off">
+      </label>
+      <div id="filtros" class="chips" role="group" aria-label="Filtrar por categoria"></div>
+      <p id="contador" class="count" aria-live="polite"></p>
+    </section>
+
+    <section id="grade" class="grid" aria-label="Figuras históricas"></section>
+    <p id="vazio" class="empty" hidden>Nenhuma figura encontrada. Tente outro nome ou escolha "Todas".</p>
+  </main>
+
+  <footer><p>Heróis &amp; Vilões da História · versão de teste</p></footer>
+
+  <dialog id="modal" aria-labelledby="m-nome">
+    <button class="close" id="fechar" aria-label="Fechar">×</button>
+    <div id="m-conteudo"></div>
+  </dialog>
+
+  <!-- A ordem importa: primeiro os dados, depois a lógica -->
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
+<!-- ============ index.html (termina aqui) ============ -->
